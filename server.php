@@ -47,8 +47,8 @@ while (true) {
             //解码发送过来的数据
             $received_text = unmask($buf); 
             $tst_msg = json_decode($received_text);  
-            $user_name = $tst_msg->name; 
-            $user_message = $tst_msg->message; 
+            @$user_name = $tst_msg->name; 
+            @$user_message = $tst_msg->message; 
             
             //把消息发送回所有连接的 client 上去
             $response_text = mask(json_encode(['type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message]));
