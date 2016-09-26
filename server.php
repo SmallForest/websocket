@@ -68,7 +68,7 @@ while (true) {
     }
 }
 // 关闭监听的socket
-socket_close($sock);
+socket_close($socket);
 
 //发送消息的方法
 function send_message($msg)
